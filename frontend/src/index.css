@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0F172A;
+  --color-card: #1E293B;
+  --color-primary: #4F46E5;
+  --color-primary-hover: #4338CA;
+  --color-accent: #10B981;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-slate-100 min-h-screen font-sans;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.15) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-card/70 backdrop-blur-md border border-white/10 rounded-2xl shadow-lg;
+  }
+  
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-lg font-medium transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply bg-white/5 hover:bg-white/10 border border-white/10 text-white px-4 py-2 rounded-lg font-medium transition-all flex items-center justify-center gap-2;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-slate-900/60 border border-white/10 rounded-lg text-white outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary text-sm;
+  }
+
+  .label {
+    @apply block mb-1.5 text-sm font-medium text-slate-400;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
+
+.loader {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-top: 2px solid #4F46E5;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
