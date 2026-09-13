@@ -1,4 +1,4 @@
-# Client-Lead-Management-System-Mini-CRM
+# Client Lead Management System Mini CRM
 
 ## Overview
 A lightweight, full-stack Customer Relationship Management (CRM) dashboard for tracking client leads, managing interactions, and analyzing sales pipelines.
